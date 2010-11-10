@@ -1,0 +1,55 @@
+/* DarkGreen; LawnGreen; */
+.board {
+  clear: both; }
+
+.row {
+  clear: both; }
+
+.sq {
+  background-color: #e0e0e0;
+  border-style: solid;
+  border-color: #e0e0e0;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 8px;
+  width: 8px;
+  margin: 0px 1px 1px 1px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  padding: 0;
+  float: left; }
+
+/* Active square, unselected - matching border */
+.sq_active_unselected {
+  background-color: DarkGreen;
+  border-color: DarkGreen; }
+
+/* Active square, selected - contrasting border */
+.sq_active_selected {
+  background-color: DarkGreen;
+  border-color: yellow; }
+
+/* Inactive square, unselected - matching border */
+.sq_inactive_unselected {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0; }
+
+/* Inactive square, selected - contrasting border*/
+.sq_inactive_selected {
+  background-color: #e0e0e0;
+  border-color: yellow; }
+
+.css_button {
+  width: 6em;
+  text-align: center;
+  background-color: #E0E0E0;
+  border-color: #000000;
+  border-width: 2px;
+  border-style: solid;
+  margin: 2px 2px 2px 2px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  float: left; }
+
+#num_steps {
+  width: 20em; }

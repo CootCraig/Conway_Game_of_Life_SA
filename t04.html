@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Life Grid Jquery Example t04</title>
+    <link href='t04.css' rel='stylesheet' type='text/css' />
+    <script src='../jquery/dist/jquery.js'></script>
+    <script src='jquery_timers.js'></script>
+    <script src='t04.js'></script>
+    <script src='t04_document_ready.js'></script>
+  </head>
+  <body>
+    <h1>Life Grid Jquery Example t04</h1>
+    <div id='control'>
+      <div class='css_button' id='step_button'>Step</div>
+      <div class='css_button' id='clear_button'>Clear</div>
+      <div class='css_button' id='run_button'>Run</div>
+      <div class='css_button' id='num_steps'>
+        <form>
+          Number of Steps
+          <input id='number_of_steps' name='number_of_steps' type='text' />
+        </form>
+      </div>
+    </div>
+    <div id='board'></div>
+    <div id='rules_of_the_game'>
+      <h2>Rules of the Game</h2>
+      Every new generation of Life is determined from the previous generation by three simple rules:
+      <ul>
+        <li>If an alive cell has two or three alive neighboring cells, it stays alive.</li>
+        <li>If a dead cell has exactly three alive neighboring cells, it comes to life.</li>
+        <li>Otherwise, the cell will stay dead or die.</li>
+      </ul>
+      A "neighboring cell" is any of the eight cells adjacent or diagonally adjacent to the given cell.
+    </div>
+  </body>
+</html>

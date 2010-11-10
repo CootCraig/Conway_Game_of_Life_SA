@@ -1,0 +1,28 @@
+!!! 5
+%html
+  %head
+    %title Life Grid Jquery Example t04
+    %link{:rel => "stylesheet", :type => "text/css", :href => "t04.css"}
+    %script{:src => "../jquery/dist/jquery.js"}
+    %script{:src => "jquery_timers.js"}
+    %script{:src => "t04.js"}
+    %script{:src => "t04_document_ready.js"}
+  %body
+    %h1 Life Grid Jquery Example t04
+    #control
+      #step_button{:class => 'css_button'} Step
+      #clear_button{:class => 'css_button'} Clear
+      #run_button{:class => 'css_button'} Run
+      #num_steps{:class => 'css_button'}
+        %form
+          Number of Steps
+          %input#number_of_steps{:type => 'text', :name => 'number_of_steps'}
+    #board
+    #rules_of_the_game
+      %h2 Rules of the Game
+      Every new generation of Life is determined from the previous generation by three simple rules:
+      %ul
+        %li If an alive cell has two or three alive neighboring cells, it stays alive.
+        %li If a dead cell has exactly three alive neighboring cells, it comes to life.
+        %li Otherwise, the cell will stay dead or die.
+      A "neighboring cell" is any of the eight cells adjacent or diagonally adjacent to the given cell.

@@ -1,0 +1,63 @@
+$sq_select: #ffff00;
+$empty_sq: #E0E0E0;
+/* DarkGreen; LawnGreen; */
+$active_sq: DarkGreen;
+$sq_radius: 2px;
+$sq_size: 8px;
+$margin_size: 20px;
+$border_size: 1px;
+.board {
+       clear: both;
+}
+.row {
+     clear: both;
+}
+.sq {
+    background-color: $empty_sq;
+    border-style: solid;
+    border-color: $empty_sq;
+    -moz-border-radius: $sq_radius;
+    border-radius: $sq_radius;
+    height: $sq_size;
+    width: $sq_size;
+    margin: 0px 1px 1px 1px;
+    border-top-width: $border_size;
+    border-right-width: $border_size;
+    padding: 0;
+    float: left;
+}
+/* Active square, unselected - matching border */
+.sq_active_unselected {
+    background-color: $active_sq;
+    border-color: $active_sq;
+}
+/* Active square, selected - contrasting border */
+.sq_active_selected {
+    background-color: $active_sq;
+    border-color: $sq_select;
+}
+/* Inactive square, unselected - matching border */
+.sq_inactive_unselected {
+    background-color: $empty_sq;
+    border-color: $empty_sq;
+}
+/* Inactive square, selected - contrasting border*/
+.sq_inactive_selected {
+    background-color: $empty_sq;
+    border-color: $sq_select;
+}
+.css_button {
+    width: 6em;
+    text-align: center;
+    background-color: #E0E0E0;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    margin: 2px 2px 2px 2px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    float: left;
+}
+#num_steps {
+           width: 20em;
+}
