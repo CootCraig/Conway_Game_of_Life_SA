@@ -1,5 +1,4 @@
 function board(css_id,num_of_rows,num_of_cols) {
-  console.log('function board try step event');
   var $board_div = $(css_id);
   var $board_arr = new Array(num_of_rows); // row major $board_arr[row][col]
   for (var row = 0; row < num_of_rows; row++) {
@@ -151,7 +150,6 @@ function clear_board(board_arr){
   }
 }
 function run_times(board_arr){
-  console.log('run_times: ' + $('#number_of_steps').val());
   var step_count = parseInt($('#number_of_steps').val());
   $('#run_button').everyTime(800,
                              function(board_arr) {

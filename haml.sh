@@ -1,3 +1,3 @@
 #!/usr/bin/zsh
-haml t04.haml t04.html
+haml conway_game.haml conway_game.html
 
