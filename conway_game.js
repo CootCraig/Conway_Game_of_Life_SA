@@ -151,7 +151,7 @@ function clear_board(board_arr){
 }
 function run_times(board_arr){
   var step_count = parseInt($('#number_of_steps').val());
-  $('#run_button').everyTime(2000,
+  $('#run_button').everyTime(400,
                              (function(){
                                var board = board_arr;
                                return function() {
