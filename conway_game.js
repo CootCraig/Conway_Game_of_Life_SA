@@ -151,9 +151,12 @@ function clear_board(board_arr){
 }
 function run_times(board_arr){
   var step_count = parseInt($('#number_of_steps').val());
-  $('#run_button').everyTime(800,
-                             function(board_arr) {
-                               next_generation(board_arr);
-                             },
+  $('#run_button').everyTime(2000,
+                             (function(){
+                               var board = board_arr;
+                               return function() {
+                                 next_generation(board);
+                               }
+                             }) (),
                              step_count);
 }
