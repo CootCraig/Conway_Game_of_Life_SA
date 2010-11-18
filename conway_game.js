@@ -101,11 +101,12 @@ GAME_OF_LIFE.square_constructor = function(spec){
 
 GAME_OF_LIFE.game_board_constructor = function(spec){
   var board_div,board_div_name,board_squares,col_count;
-  var clear_board,create_board,next_generation,row_count,that;
+  var clear_board,create_board,next_generation,row_count,step_delay_msec,steps_left,that;
 
   board_div_name = spec.board_div_name || '#board';
   row_count = spec.row_count || 20;
   col_count = spec.col_count || 20;
+  step_delay_msec = spec.step_delay_msec || 50;
 
   that = function(){};
 
@@ -136,22 +137,28 @@ GAME_OF_LIFE.game_board_constructor = function(spec){
   clear_board = function(){
     var row,square
     if ((board_squares) && (board_squares.length > 0) && (board_squares[0].length > 0)) {
-      for (row in board_squares) {
-        for (square in row) {
-          square.set_alive(false);
+      for (row=0; row<row_count; row+=1){
+        for (col=0; col<col_count; col+=1) {
+          board_squares[row][col].set_alive(false);
         }
       }
-    }
+    }4
   };
   that.clear_board = clear_board;
 
-  animate = function(num_of_steps,step_delay_msec){
-    // todo
+  animate = function(num_of_steps){
+    steps_left = num_of_steps
+    animation_step();
   };
   that.animate = animate;
 
   animation_step = function() {
-    // todo
+    if (steps_left > 0) {
+      next_generation();
+      steps_left -= 1;
+      $("#number_of_steps").val(steps_left)
+      setTimeout(animation_step,step_delay_msec);
+    }
   };
 
   next_generation = function(){
@@ -213,6 +220,9 @@ GAME_OF_LIFE.game_board_constructor = function(spec){
 GAME_OF_LIFE.ui_constructor = function(){
   $('#step_button').click(function(){
     GAME_OF_LIFE.board.next_generation();
+  });
+  $("#run_button").click(function(){
+    GAME_OF_LIFE.board.animate(parseInt($("#number_of_steps").val()));
   });
   $('#clear_button').click(function(){
     GAME_OF_LIFE.board.clear_board();
